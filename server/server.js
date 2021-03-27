@@ -6,13 +6,13 @@ const typeDefs = gql`
     hello: String
   }
 `;
- 
+
 const resolvers = {
   Query: {
     hello: () => 'Hello world!',
   },
 };
- 
+
 const server = new ApolloServer({ typeDefs, resolvers });
  
 const app = express();

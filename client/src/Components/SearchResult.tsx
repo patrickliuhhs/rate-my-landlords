@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { useHistory } from 'react-router-dom';
 import { getResults, QueryObj} from './Utils'
+import ResultsTable from './ResultsTable'
 
 function SearchResult ( props: QueryObj | any | undefined ){
 
@@ -10,15 +11,15 @@ function SearchResult ( props: QueryObj | any | undefined ){
     {variables: props.location.state.query}
   );
   
-  if (loading) {
-    return (
-      <div>LOADING</div>
-    )
-  }
+  // if (loading) {
+  //   return (
+  //     <div>LOADING</div>
+  //   )
+  // }
   
   return (
     <div>
-      nothing
+      <ResultsTable/>
     </div>
   )
 }
